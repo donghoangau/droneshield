@@ -1,0 +1,11 @@
+Test Strategy for SauceDemo E-commerce Website
+Website: https://www.saucedemo.com
+
+Login Credentials:
+
+Username: standard_user
+Password: secret_sauce
+
+1. Introduction
+The test strategy defines the approach and guidelines that will be followed to ensure the SauceDemo e-commerce website meets the requirements and performs well under various scenarios. This document will cover testing techniques, types of testing to be performed, tools to be used, and overall testing goals.
+
