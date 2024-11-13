@@ -1,5 +1,11 @@
 from playwright.sync_api import sync_playwright
 
+def login_test(page, username, password):
+    page.goto("https://www.saucedemo.com/")
+    page.fill("input[data-test='username']", username)
+    page.fill("input[data-test='password']", password)
+    page.click("input[data-test='login-button']")
+
 def test_login_page():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -15,22 +21,17 @@ def test_login_page():
             {"username": "standard_user", "password": "wrong_password", "expected": "error", "message": "Epic sadface: Username and password do not match any user in this service"}
         ]
 
-        # Loop in the above array for each user scenario
         for user in users:
-            page.goto("https://www.saucedemo.com/")
-
-            page.fill("input[data-test='username']", user["username"])
-            page.fill("input[data-test='password']", user["password"])
-            page.click("input[data-test='login-button']")
-
+            login_test(page, user["username"], user["password"])
+            
             if user["expected"] == "success":
-                assert "inventory" in page.url
+                assert "inventory" in page.url, f"Login failed for {user['username']}"
                 page.click("#react-burger-menu-btn")
                 page.click("#logout_sidebar_link")
             else:
                 error_message = page.locator("h3[data-test='error']")
-                assert error_message.is_visible()
-                assert error_message.text_content() == user["message"]
+                assert error_message.is_visible(), f"Error message not visible for {user['username']}"
+                assert error_message.text_content() == user["message"], f"Unexpected error message for {user['username']}"
 
         browser.close()
 
