@@ -23,12 +23,13 @@ def test_login_page():
             page.click("input[data-test='login-button']")
 
             if user["expected"] == "success":
-                assert "inventory" in page.url, f"Login failed for {user['username']}"
+                assert "inventory" in page.url
                 page.click("#react-burger-menu-btn")
                 page.click("#logout_sidebar_link")
             else:
                 error_message = page.locator("h3[data-test='error']")
                 assert error_message.is_visible()
+                assert error_message.text_content() == user["message"]
 
         # Close the browser
         browser.close()
