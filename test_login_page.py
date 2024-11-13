@@ -9,7 +9,7 @@ def login_test(page, username, password):
 def verify_content_page(page):
     # Verify inventory page
     assert page.locator(".inventory_list").is_visible(), "Inventory list is not visible"
-    assert page.locator(".shopping_cart_link").is_visible(), "Shopping cart link is not visible"
+    assert page.locator(".shopping_cart_link").is_visible(), "Shopping cart is not visible"
     assert "inventory" in page.url, "User is not on the inventory page"
     items = page.locator(".inventory_item")
     assert items.count() == 6, f"Expected 6 items, but found {items.count()}"
