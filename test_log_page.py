@@ -15,6 +15,7 @@ def test_login_page():
             {"username": "standard_user", "password": "wrong_password", "expected": "error", "message": "Epic sadface: Username and password do not match any user in this service"}
         ]
 
+        # Loop in the above array for each user scenario
         for user in users:
             page.goto("https://www.saucedemo.com/")
 
@@ -31,7 +32,6 @@ def test_login_page():
                 assert error_message.is_visible()
                 assert error_message.text_content() == user["message"]
 
-        # Close the browser
         browser.close()
 
 if __name__ == "__main__":
