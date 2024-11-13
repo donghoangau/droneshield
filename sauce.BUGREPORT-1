@@ -1,5 +1,5 @@
 responsive issue when side menu is opened
-Link: "Reset App State" in side menu does not work
+Link: "Reset App State" in side menu clear the cart but the item's button "Remove" has not been reset back to "Add to cart". We have to refresh the page
 UI issue: 
 Tab does not highligh on Login button
 "Epic sadface: Username and password do not match any user in this service" Broken messasge rendered
