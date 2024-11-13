@@ -6,6 +6,15 @@ def login_test(page, username, password):
     page.fill("input[data-test='password']", password)
     page.click("input[data-test='login-button']")
 
+def verify_content_page(page):
+    # Verify inventory page
+    assert page.locator(".inventory_list").is_visible(), "Inventory list is not visible"
+    assert page.locator(".shopping_cart_link").is_visible(), "Shopping cart link is not visible"
+    assert "inventory" in page.url, "User is not on the inventory page"
+    items = page.locator(".inventory_item")
+    assert items.count() == 6, f"Expected 6 items, but found {items.count()}"
+
+
 def test_login_page():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -25,7 +34,8 @@ def test_login_page():
             login_test(page, user["username"], user["password"])
             
             if user["expected"] == "success":
-                assert "inventory" in page.url, f"Login failed for {user['username']}"
+                verify_content_page(page)
+
                 page.click("#react-burger-menu-btn")
                 page.click("#logout_sidebar_link")
             else:
