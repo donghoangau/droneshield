@@ -86,6 +86,7 @@ Password: secret_sauce
     4.2 User Interface (UI) Testing
         Objective: To ensure the website’s layout, design, and visual elements are consistent and meet the specifications.
         Approach:
+            Check for any frontend errors in console when page being loaded.    
             Verify page layout consistency across browsers.
             Check for broken images, incorrect formatting, and overlapping elements.
             Validate font sizes, colors, and button styles.
@@ -112,7 +113,7 @@ Password: secret_sauce
             Check for SQL injection, cross-site scripting (XSS), and other common security threats.
             Verify that sensitive data (like passwords) is encrypted.
             Test session management, especially logout functionality and session expiration.
-            Logging system to detect any bot and crawling activites
+            Logging system to detect any bot and crawling activites.
 
     4.6 Cross-Browser and Cross-Device Testing
 
