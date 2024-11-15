@@ -24,7 +24,7 @@ Test Plan for main feature flow: Order items and checkout
     Devices: Desktop, Tablet, Mobile (iOS and Android).
     Test Data: Use valid and invalid test data for login and checkout, including multiple shipping addresses.
 
-5. Test Cases
+5. Test Scenarios
 
     5.1 Add Item to Cart from Product Listing Page    
         Objective: Ensure users can add items to the cart from the product listing page.
