@@ -1,0 +1,35 @@
+I decided to use Playwright because it is a powerful and reliable tool for end-to-end testing of modern web app. Its ability to handle cross-browser testing, stable, and complex user interactions, along with trace debugging tool and CI/CD integration, makes it a good choice.
+
+Here are some reasons why:
+
+1. Cross-Browser Testing
+      Playwright provides support for testing in multiple major browsers, including Chromium (Chrome/Edge), Firefox, and WebKit (Safari).
+
+2. Fast and Reliable
+      Headless Mode: Playwright supports headless testing, which runs faster and is ideal for CI/CD pipelines.
+      Automatic Waiting: Playwright automatically waits for elements to be ready before performing actions, reducing the need to write explicit wait conditions and making tests more reliable.
+
+3. Modern Web Testing Capabilities
+      Handling Complex Interactions: such as mouse clicks, keyboard inputs, and even hovering over elements.
+
+4. Easy Debugging
+      Trace Viewer: Playwright has a built-in trace viewer that helps us visualise tests running, making it easier to debug issues.
+      Screenshots and Videos: we can screenshots or record videos of the tests, which is useful for debugging or sharing issues with team.
+
+6. Reliable Testing
+      Automatic Assertions: built-in assertions make it easier to write tests for dynamic content, such as checking if an element is visible or if text content has changed.
+
+7. Parallel Test Execution
+      Faster Execution: Playwright supports running tests in parallel, which significantly speeds up the testing process, especially useful for large test suites.
+      Efficient Resource Use: By running tests in parallel, Playwright optimizes the use of your system's resources.
+
+8. CI/CD Integration
+      Easy integrates with popular CI/CD tools (like Jenkins, GitHub Actions, GitLab, and Azure DevOps), making it easier to automate testing workflow.
+      Playwright’s support for headless browsers makes it ideal for running tests in CI environments.
+
+9. Good Documentation from Microsoft
+      Active Community: Playwright has a rapidly growing community, and Microsoft maintains it, ensuring continuous improvements and support.
+      Detailed Documentation: Playwright’s documentation is comprehensive, making it easier for teams to get started and troubleshoot issues.
+
+10. Robust Handling of Web Elements
+      Selectors and Locators: Playwright provides a variety of selector options, including CSS, XPath, and text-based selectors, making it easier to interact with elements.
