@@ -6,7 +6,7 @@ Login Credentials:
 Username: standard_user
 Password: secret_sauce
 
-1. **Introduction**
+1. Introduction
     The test strategy is more focusing on defining the scope of testing, each scope explains the approach and guidelines that will be followed.
     The test strategy will ensure the SauceDemo website meets the requirements and performs well under various scenarios on production. 
     This document will cover testing techniques, types of testing to be performed, tools to be used, and overall testing goals.
