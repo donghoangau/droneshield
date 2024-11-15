@@ -31,7 +31,7 @@ The test simulates a complete user flow of logging in, adding an item to the car
    ```bash
    npx playwright install
 
-4. **Run test:**:
+4. **Run test:**
     To run the test
 
    ```bash
