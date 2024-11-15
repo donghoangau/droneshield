@@ -24,10 +24,16 @@ The test simulates a complete user flow of logging in, adding an item to the car
    Navigate to the project directory and run:
 
    ```bash
-    npm install playwright
+   npm install @playwright/test --save-dev
 
-3. **Run test:**:
-    To run the test, run command:
+3. **Install Chromium Browser:**:
+   Navigate to the project directory and run:
 
    ```bash
-    node test.js
+   npx playwright install
+
+4. **Run test:**:
+    To run the test
+
+   ```bash
+    npx playwright test
