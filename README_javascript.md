@@ -21,13 +21,12 @@ The test simulates a complete user flow of logging in, adding an item to the car
    cd droneshield
 
 2. **Install Dependencies:**
-   Navigate to the project directory and run:
+   Go to directory folder and run:
 
    ```bash
    npm install @playwright/test --save-dev
 
 3. **Install Chromium Browser:**
-   Navigate to the project directory and run:
 
    ```bash
    npx playwright install
