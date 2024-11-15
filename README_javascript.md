@@ -17,7 +17,7 @@ The test simulates a complete user flow of logging in, adding an item to the car
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git https://github.com/donghoangau/droneshield.git
    cd droneshield
 
 2. **Install Dependencies:**:
