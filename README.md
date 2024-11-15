@@ -37,3 +37,9 @@ The test simulates a complete user flow of logging in, adding an item to the car
    ```bash
     npx playwright test
     npx playwright test --headed
+
+5. **Show test report:**
+
+   ```bash
+   npx playwright show-report
+
