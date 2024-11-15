@@ -8,7 +8,7 @@ Password: secret_sauce
 
 1. Introduction
     The test strategy is more focusing on defining the scope of testing, each scope explains the approach and guidelines that will be followed.
-    The test strategy will ensure the SauceDemo e-commerce website meets the requirements and performs well under various scenarios on production. 
+    The test strategy will ensure the SauceDemo website meets the requirements and performs well under various scenarios on production. 
     This document will cover testing techniques, types of testing to be performed, tools to be used, and overall testing goals.
 
 2. Objectives
@@ -90,6 +90,7 @@ Password: secret_sauce
             Verify page layout consistency across browsers.
             Check for broken images, incorrect formatting, and overlapping elements.
             Validate font sizes, colors, and button styles.
+            Responsive verify that the UI renders correctly on different screen sizes and devices.
     
     4.3 User Experience (UX) Testing
 
@@ -100,7 +101,8 @@ Password: secret_sauce
 
     4.4 Performance Testing
 
-        Objective: To evaluate the website’s performance under normal and peak load conditions.
+
+        Objective: To evaluate the website’s performance under normal and peak load conditions.(Like JMeter, K6)
         Approach:
             Perform load testing to ensure the website can handle a high number of concurrent users.
             Conduct stress testing to determine the website’s breaking point and threshold.
@@ -134,9 +136,13 @@ Password: secret_sauce
         Browsers: Chrome, Firefox, Safari, Microsoft Edge (latest versions)
         Devices: Desktop, Tablet, Mobile (iOS and Android)
         Test Data: Use provided credentials for login, existing product items for all test cases, including valid and invalid inputs.
+        Data Management: Test data will be created and cleaned up post-testing to maintain a stable test environment.
+        Staging Environment: A staging environment mirroring production will be used for testing to ensure reliability.
+        Dev Environement, Test Environement, Stress Environment
+
 
 6. Tools and Technologies
-        Functional Testing: Selenium WebDriver (for automation), Postman (for API testing)
+        Functional Testing: Selenium WebDriver/Playwright/Cypress (for UI E2E automation), Postman and K6 (for API testing)
         Performance Testing: JMeter, or K6 Load test
         Cross-Browser Testing: BrowserStack
         Bug Tracking and Test Management: JIRA
@@ -156,17 +162,20 @@ Password: secret_sauce
 
 8. Risk Management
         Risks:
+            High traffic might affect performance.
             Potential downtime of the website during testing especially performance/load test
             Limited access to certain test environments for provided credential.
-            Customer data leaking.
+            Sensitive user data might be at risk like customer data leaking.
             Delay in fixing high-severity bugs.
         Mitigation Strategies:
             Have feature toggles/flags.
             Deployment pland and rollback plan 
             Schedule tests and deploy feature at non-peak hours
             Have backup environments and test data available.
-            Have observibility dashboard
+            Have logging system and observibility dashboard on production.
             Prioritize and communicate critical incident immediately.  
+            Automated regression testing will be implemented for quick verification.
+
 
 9. Entry and Exit Criteria
         Entry Criteria:
