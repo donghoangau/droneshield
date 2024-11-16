@@ -1,9 +1,44 @@
 responsive issue when side menu is opened
 Link: "Reset App State" in side menu clear the cart but the item's button "Remove" has not been reset back to "Add to cart". We have to refresh the page
-UI issue: 
+UI - Issues: 
 Tab does not highligh on Login button
 "Epic sadface: Username and password do not match any user in this service" Broken messasge rendered
 Users can asscess the page by directly enter the URL
 Leftside menu hides the footer when opened.
 - There may be a potential bug on GST tax , it is not 10%, it's around 8%
 - The Payment Information: SauceCard #31337 is alway the same for all accounts
+
+UX - Issues
+
+Issue Summary: When a user (All user types) fills out the checkout information on the page (https://www.saucedemo.com/checkout-step-one.html) and clicks the "Continue" button, they are taken to the next checkout step. 
+If the user then decides to go back and amend their checkout information, clicking the "Cancel" button unexpectedly redirects them to the homepage rather than returning them to the previous screen where they can modify their input.
+
+Steps to Reproduce the Issue:
+   1. Navigate to the Website: Open a browser and go to https://www.saucedemo.com.
+   2. Login: Enter valid login credentials and log in to access the shopping page.
+   3. Add an Item to the Cart: Choose any item and add it to your cart.
+   4. Go to Cart: Click on the cart icon in the top right corner to view your selected items.
+   5. Proceed to Checkout: Click the "Checkout" button to proceed to the checkout information page.
+   6. Fill Out the Information: Enter first name, last name, and postal code.
+   7. Click "Continue": Press the "Continue" button to proceed to the next step in the checkout process.
+   8. Click "Cancel": On the next checkout screen, click the "Cancel" button to attempt to go back and amend your information.
+
+Expected Behavior: 
+    Users expect the "Cancel" button to take them back to the previous checkout screen so they can edit or update their information.
+Actual Behavior: 
+    The "Cancel" button redirects the user to the homepage, causing confusion and frustration, as users lose their progress and must start the checkout process over again.
+
+Impact:
+    User Frustration: Users may become annoyed or frustrated when they realize their checkout information is lost and needs to be re-entered.
+    Abandoned Checkouts: This behavior increases the risk of users abandoning their checkout altogether, potentially impacting sales and user satisfaction.
+
+Suggested Solution:
+    Modify the behavior of the "Cancel" button to return users to the previous screen where they can amend their checkout information, ensuring a smoother and more intuitive user experience.
+
+Severity: High
+    Reason: The bug significantly impacts the user experience during a critical stage of the checkout process. 
+            Losing previously entered information may cause user frustration and lead to abandoned checkouts, affecting the website's conversion rate.
+
+Priority: High
+    Reason: This issue needs prompt attention because it affects the primary functionality of the checkout flow. Addressing this bug can improve user retention and increase successful transaction completion rates.
+
