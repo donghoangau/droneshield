@@ -6,3 +6,4 @@ Tab does not highligh on Login button
 Users can asscess the page by directly enter the URL
 Leftside menu hides the footer when opened.
 - There may be a potential bug on GST tax , it is not 10%, it's around 8%
+- The Payment Information: SauceCard #31337 is alway the same for all accounts
