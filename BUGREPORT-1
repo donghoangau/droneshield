@@ -1,13 +1,3 @@
-responsive issue when side menu is opened
-Link: "Reset App State" in side menu clear the cart but the item's button "Remove" has not been reset back to "Add to cart". We have to refresh the page
-UI - Issues: 
-Tab does not highligh on Login button
-"Epic sadface: Username and password do not match any user in this service" Broken messasge rendered
-Users can asscess the page by directly enter the URL
-Leftside menu hides the footer when opened.
-- There may be a potential bug on GST tax , it is not 10%, it's around 8%
-- The Payment Information: SauceCard #31337 is alway the same for all accounts
-
 UX - Issues
 
 Issue Summary: When a user (All user types) fills out the checkout information on the page (https://www.saucedemo.com/checkout-step-one.html) and clicks the "Continue" button, they are taken to the next checkout step. 
@@ -42,3 +32,154 @@ Severity: High
 Priority: High
     Reason: This issue needs prompt attention because it affects the primary functionality of the checkout flow. Addressing this bug can improve user retention and increase successful transaction completion rates.
 
+------------------------------------------------------------------------
+Test Report for UI Issues
+
+1. Issue: "Reset App State" in Side Menu
+
+Description: The "Reset App State" link in the side menu clears the cart, but the item's "Remove" button does not reset back to "Add to cart" until the page is refreshed.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Add items to the cart.
+   Open the side menu and click "Reset App State."
+   Observe that the cart is cleared, but item buttons still show "Remove" instead of "Add to cart."
+Expected Behavior: Item buttons should reset to "Add to cart" without needing a page refresh.
+Actual Behavior: Buttons remain as "Remove."
+Recommendation: Update the UI state immediately after clearing the cart.
+
+2. Issue: Tab Focus on Login Button
+
+Description: Using the Tab key to move focus does not highlight the "Login" button.
+Severity: Low
+Priority: Low
+Steps to Reproduce:
+   Navigate to the login page.
+   Use the Tab key to cycle through input fields and buttons.
+   Notice that the "Login" button does not receive a visible focus outline.
+Expected Behavior: The "Login" button should be highlighted when focused.
+Actual Behavior: No visible focus on the "Login" button.
+Recommendation: Implement a focus outline for accessibility.
+
+3. Issue: Broken Error Message on Login
+
+Description: The error message "Epic sadface: Username and password do not match any user in this service" is broken and rendered incorrectly.
+Severity: Medium
+Priority: High
+Steps to Reproduce:
+   Enter an invalid username or password on the login page.
+   Click the "Login" button.
+   Observe the error message displayed.
+Expected Behavior: The error message should be clearly formatted and readable.
+Actual Behavior: The message appears broken or incorrectly rendered.
+Recommendation: Correct the message formatting and ensure proper rendering.
+
+4. Issue: Item Image Stretching on Mobile
+
+Description: Item images stretch wider when the app is opened on a mobile device.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Open the app on a mobile device.
+   Navigate to any item page.
+   Observe the item image's stretching behavior.
+Expected Behavior: Images should maintain aspect ratio on mobile screens.
+Actual Behavior: Images appear stretched.
+Recommendation: Use responsive design techniques to maintain image proportions.
+
+5. Issue: Incorrect GST Tax Calculation
+
+Description: The GST tax rate is not 10%; it is calculated around 8%.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Add items to the cart and proceed to checkout.
+   Observe the GST tax calculation.
+Expected Behavior: GST should be calculated at 10%.
+Actual Behavior: GST is incorrectly calculated around 8%.
+Recommendation: Correct the tax calculation formula.
+
+6. Issue: Static Payment Information
+
+Description: The payment information "SauceCard #31337" is the same for all orders.
+Severity: High   
+Priority: High
+Steps to Reproduce:
+   Complete multiple orders.
+   Observe the payment information provided.
+Expected Behavior: Unique payment information or placeholder text.
+Actual Behavior: Static payment number for all orders.
+Recommendation: Implement variable payment information for realism.
+
+7. Issue: Item Descriptions Containing Code
+
+Description: Item descriptions contain code snippets like carry.allTheThings() and Test.allTheThings().
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Navigate to the item page.
+   Check the item description text.
+Expected Behavior: Descriptions should not contain code snippets.
+Actual Behavior: Descriptions contain unnecessary code.
+Recommendation: Remove or sanitize code from descriptions.
+
+8. Issue: Unclear Error Message on Restricted Access
+
+Description: The error message "Epic sadface: You can only access '/inventory.html' when you are logged in." is unclear and not user-friendly.
+Severity: Low
+Priority: Medium
+Steps to Reproduce:
+   Attempt to access /inventory.html without logging in.
+   Observe the error message.
+Expected Behavior: A clearer and more user-friendly error message.
+Actual Behavior: Vague and confusing message.
+Recommendation: Improve error message clarity and placement.
+
+9. Issue: Checkout Input Field Validation
+
+Description: Checkout input fields do not limit characters, and the postcode field accepts letters. Fields also accept spaces and still allow proceeding.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Proceed to the checkout page.
+   Enter letters in the postcode field and excessive characters in other fields.
+   Click "Continue" and notice validation issues.
+Expected Behavior: Proper input validation and character limits.
+Actual Behavior: Fields allow invalid and excessive input.
+Recommendation: Implement input validation rules and character limits.
+
+10. Issue: Checkout Proceeds with Empty Cart
+
+Description: Users can proceed to checkout even if there are no items in the cart.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Ensure the cart is empty.
+   Attempt to proceed to checkout.
+Expected Behavior: Checkout should be blocked if the cart is empty.
+Actual Behavior: Checkout is allowed.
+Recommendation: Add validation to prevent empty cart checkouts.
+
+11. Issue: Cart Items Not Saved Across Browsers
+
+Description: The number of items in the cart is not saved when logging in from a different browser. The cart is stored in the local browser cache.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Add items to the cart and log in.
+   Log in on a different browser and check the cart.
+Expected Behavior: Cart items should be synced across sessions and browsers.
+Actual Behavior: Cart items are missing.
+Recommendation: Store cart data in a database rather than local cache.
+
+12. Issue: Footer Rendering Issue on Small Screens
+
+Description: The footer is not rendered correctly when the screen width is smaller than 960px.
+Severity: Low
+Priority: Low
+Steps to Reproduce:
+   Resize the browser window to less than 960px width.
+   Observe the footer's appearance.
+Expected Behavior: Footer should adjust responsively to smaller screens.
+Actual Behavior: Footer appears misaligned or broken.
+Recommendation: Fix footer styling for responsive design.
