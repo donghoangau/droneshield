@@ -25,14 +25,15 @@ Impact:
 Suggested Solution:
     Modify the behavior of the "Cancel" button to return users to the previous screen where they can amend their checkout information, ensuring a smoother and more intuitive user experience.
 
-Severity: High
+Severity: Medium
     Reason: The bug significantly impacts the user experience during a critical stage of the checkout process. 
             Losing previously entered information may cause user frustration and lead to abandoned checkouts, affecting the website's conversion rate.
 
 Priority: High
     Reason: This issue needs prompt attention because it affects the primary functionality of the checkout flow. Addressing this bug can improve user retention and increase successful transaction completion rates.
 
-------------------------------------------------------------------------
+================================================================================================================================================================================================================================================
+
 Test Report for UI Issues
 
 1. Issue: "Reset App State" in Side Menu
@@ -183,3 +184,255 @@ Steps to Reproduce:
 Expected Behavior: Footer should adjust responsively to smaller screens.
 Actual Behavior: Footer appears misaligned or broken.
 Recommendation: Fix footer styling for responsive design.
+
+13.Issue: Navigation Misbehavior from Checkout to Product Details
+
+Description: On the final checkout page, if a user clicks on a product to view its details and then clicks "Back to Product," they are redirected to the inventory page instead of returning to the checkout screen. 
+This disrupts the checkout flow and can confuse users.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Proceed to the final checkout page.
+   Click on any product to view its details.
+   Click the "Back to Product" button.
+Observe that the page redirects to the inventory page instead of returning to the checkout screen.
+Expected Behavior: Clicking "Back to Product" should return the user to the checkout screen, preserving the current checkout state.
+Actual Behavior: The user is redirected to the inventory page, causing disruption in the checkout process.
+Recommendation: Update the navigation logic to ensure the user is redirected back to the checkout page, maintaining user experience during the checkout flow.
+
+================================================================================================================================================================================================================================================
+Report bugs with "problem_user"
+
+1. Issue: Identical Product Images
+
+Description: All product images display the same image (e.g., Dog bites tennis ball), regardless of the item.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Navigate to the product listing page.
+   Observe that each item has the same image.
+Expected Behavior: Each product should have a unique image corresponding to the item.
+Actual Behavior: All product images are the same.
+Recommendation: Ensure each product image is unique and corresponds to the specific item.
+
+2. Issue: Sorting Feature Not Working
+
+Description: The sorting feature on the product listing page does not work as expected.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Navigate to the product listing page.
+   Use the sorting dropdown to sort items (e.g., by price, name, or popularity).
+   Observe that the items do not sort or change order.
+Expected Behavior: Items should sort correctly according to the selected criteria.
+Actual Behavior: No change in the order of items.
+Recommendation: Fix the sorting logic to correctly rearrange items based on the selected criteria.
+
+3. Issue: Add to Cart Button Not Working for Some Items
+
+Description: Certain items cannot be added to the cart. Clicking the "Add to Cart" button does not add the item or provide any feedback.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Navigate to the product listing page.
+   Attempt to add multiple items to the cart.
+   Observe that some items do not respond to the "Add to Cart" action.
+Expected Behavior: Clicking "Add to Cart" should add the item to the cart and provide visual feedback.
+Actual Behavior: Some items cannot be added to the cart, and the button is unresponsive.
+Recommendation: Investigate and fix button interactivity and ensure items can be successfully added to the cart.
+
+4. Issue: Items Cannot Be Removed from Cart via Product Page
+
+Description: Some items added to the cart cannot be removed directly from the product page. Users have to navigate to the cart page to remove these items.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Add items to the cart from the product page.
+   Try to remove the item using the "Remove" button on the product page.
+   Observe that the "Remove" button does not work.
+Expected Behavior: Items should be removable from the product page using the "Remove" button.
+Actual Behavior: Users must go to the cart page to remove items.
+Recommendation: Fix the "Remove" button functionality to ensure items can be removed directly from the product page.
+
+5. Issue: Checkout Last Name Input Issue
+
+Description: The last name field on the checkout page cannot be edited. Typing in the last name field affects the first name field instead, blocking the checkout flow.
+Severity: Critical
+Priority: High
+Steps to Reproduce:
+   Proceed to the checkout page.
+   Try to enter a last name in the designated field.
+   Observe that the input modifies the first name field, making it impossible to complete the checkout.
+Expected Behavior: Users should be able to input their last name in the correct field, and all input fields should function as expected.
+Actual Behavior: The last name field affects the first name field, blocking the checkout process.
+Recommendation: Correct the input field logic to ensure each field operates independently and handles input correctly.
+
+================================================================================================================================================================================================================================================
+Report bugs with "performance_glitch_user"
+
+1. Issue: Slow Page Redirection
+
+Description: The website experiences significant delays when redirecting from one page to another. 
+Examples include delays after logging in (redirecting to the inventory page) or after completing the checkout process (redirecting to the home page).
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Attempt to log in and observe the time taken to redirect to the inventory page.
+   Complete the checkout process and observe the delay in redirecting to the home page.
+   Navigate back to the product listing and notice the delay.
+Expected Behavior: Page redirection should occur smoothly and within a reasonable time frame.
+Actual Behavior: The page takes a long time to redirect, leading to a poor user experience.
+Recommendation: Optimize the backend and frontend code to improve performance. Consider implementing asynchronous loading, caching strategies, or reducing the payload size to speed up redirection.
+
+2. Issue: Slow Page Updates When Applying Sorting
+
+Description: The page updates very slowly when a new sorting option is applied. Sorting the product list (e.g., by price or name) takes a noticeable amount of time to reflect changes.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Go to the product listing page.
+   Select a sorting option from the dropdown menu (e.g., sort by price or name).
+   Observe the delay in the page updating and rearranging items.
+Expected Behavior: The page should update quickly and reflect the new sorting option with minimal delay.
+Actual Behavior: There is a significant lag before the sorted list appears.
+Recommendation: Optimize the sorting algorithm and consider using efficient data handling techniques. Implement lazy loading or pre-fetching strategies to speed up the sorting process.
+
+================================================================================================================================================================================================================================================
+Report issues for "error-user"
+
+1. Issue: Console Error When Viewing Product Details
+
+Description: An error is thrown in the console when a user clicks on "View Product" to see the product details.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Navigate to the product listing page.
+   Click on any product to view details.
+   Check the browser console for errors.
+Expected Behavior: No errors should be thrown in the console when viewing product details.
+Actual Behavior: An error message appears in the console.
+Recommendation: Investigate and fix the issue causing the console error to ensure proper rendering of product details.
+
+2. Issue: Non-Functional Sorting with Warning Message
+
+Description: The sorting function does not work and displays a warning message: "Sorting is broken! This error has been reported to Backtrace."
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Go to the product listing page.
+   Attempt to sort items using the sorting dropdown.
+   Observe that sorting does not work and a warning message appears.
+Expected Behavior: Items should sort correctly without any error messages.
+Actual Behavior: Sorting fails and displays a warning message.
+Recommendation: Fix the sorting logic and address any errors to ensure functionality. Investigate the warning and resolve the underlying issue.
+
+3. Issue: Console Error When Adding Item to Cart
+
+Description: An error is thrown in the console when adding an item to the cart. The item cannot be removed using the "Remove" button, and users must use a workaround to remove the item from the cart page.
+Severity: High
+Priority: High
+Steps to Reproduce:
+   Add an item to the cart from the product listing page.
+   Check the console for error messages.
+   Attempt to remove the item using the "Remove" button; notice that it does not work.
+   Go to the cart page to remove the item successfully.
+Expected Behavior: Adding an item should not throw errors, and the "Remove" button should work correctly.
+Actual Behavior: Errors occur in the console, and items cannot be removed directly from the product page.
+Recommendation: Fix the logic for adding and removing items from the cart and eliminate console errors.
+
+4. Issue: Console Errors on Checkout Step Page
+
+Description: Errors are thrown in the console when entering name and postcode information on the checkout step page.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Proceed to the checkout step page.
+   Input name and postcode information.
+   Observe the console for error messages.
+Expected Behavior: No console errors should occur when entering information in the checkout fields.
+Actual Behavior: Errors are logged in the console.
+Recommendation: Address the issues causing errors during input to ensure a smooth user experience without console disruptions.
+
+5. Issue: Missing Last Name in Checkout
+
+Description: Users cannot input their last name in the checkout form, but the checkout process still proceeds successfully. The system should block users if the last name is missing.
+Severity: Critical
+Priority: High
+Steps to Reproduce:
+   Go to the checkout page.
+   Attempt to input a last name and notice that it cannot be entered.
+   Proceed with the checkout despite the missing last name.
+Expected Behavior: The checkout process should not proceed if the last name is missing.
+Actual Behavior: The checkout continues even if the last name field is not filled.
+Recommendation: Implement validation to ensure all required fields, including the last name, are properly filled before allowing the checkout to proceed.
+
+================================================================================================================================================================================================================================================
+Report issue for user "visual_user"
+
+1. Issue: Misalignment of Burger Menu Icon and Close Button
+
+Description: The burger menu icon and the close button, when the menu is open, are not rendered in alignment. This affects the visual consistency of the navigation.
+Severity: Low
+Priority: Medium
+Steps to Reproduce:
+   Open the app and observe the burger menu icon.
+   Click the burger menu icon to open the menu.
+   Observe the alignment of the close button compared to the burger menu icon.
+Expected Behavior: The burger menu icon and the close button should be perfectly aligned.
+Actual Behavior: The icons are misaligned.
+Recommendation: Adjust the CSS styling to ensure both icons are aligned properly.
+
+2. Issue: Cart Icon Rendering in Wrong Position
+
+Description: The cart icon is not rendering in its intended position, causing a misalignment on the header or navigation bar.
+Severity: Medium
+Priority: Medium
+Steps to Reproduce:
+   Navigate to any page on the app.
+   Observe the position of the cart icon in the header area.
+Expected Behavior: The cart icon should be rendered in a consistent and visually appealing position.
+Actual Behavior: The cart icon appears in a misplaced position, affecting the layout.
+Recommendation: Correct the positioning of the cart icon using appropriate CSS adjustments.
+
+3. Issue: Checkout Button Rendering in Wrong Position
+
+Description: The checkout button on the cart or checkout page is rendered in the wrong position, impacting the layout and user experience.
+Severity: Medium
+Priority: High
+Steps to Reproduce:
+   Add items to the cart and proceed to the checkout page.
+   Observe the position of the checkout button.
+Expected Behavior: The checkout button should be rendered in a prominent and accessible position.
+Actual Behavior: The button is misplaced, making it difficult to use.
+Recommendation: Reposition the checkout button using CSS to ensure proper layout and usability.
+
+4. Issue: Misaligned Title "Sauce Labs Bolt T-Shirt" on Inventory Page
+
+Description: The title for the "Sauce Labs Bolt T-Shirt" item does not align with other items in the list on the inventory page, creating a visual inconsistency.
+Severity: Low
+Priority: Low
+Steps to Reproduce:
+   Navigate to the inventory page.
+   Look for the "Sauce Labs Bolt T-Shirt" item and compare its title alignment with other items.
+Expected Behavior: All item titles should be aligned uniformly.
+Actual Behavior: The title of "Sauce Labs Bolt T-Shirt" is not aligned with other titles in the list.
+Recommendation: Adjust the CSS for title alignment to ensure all item titles are consistently aligned.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
