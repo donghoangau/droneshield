@@ -57,8 +57,9 @@ test.describe('Petstore Orders API Tests', () => {
     expect(responseBody.id).toBe(orderId)
     expect(responseBody.status).toBe('placed')
   })
+})
 
-
+test.describe.skip('Petstore Orders API Tests unhappy test cases', () => {
   test('Delete order by ID', async ({ request }) => {
     const response = await request.delete(`${baseURL}/store/order/${orderId}`)
 

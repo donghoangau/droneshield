@@ -1,6 +1,6 @@
 const { test, expect, errors } = require('@playwright/test')
-const selector = require('../utilities/selectors')
-const addItems = require('../utilities/addItems')
+const selector = require('./utilities/selectors')
+const addItems = require('./utilities/addItems')
 
 test.describe('Saucedemo Swag Labs - E2E Regression Tests', () => {
   
