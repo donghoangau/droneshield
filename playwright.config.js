@@ -1,7 +1,8 @@
 const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
-  retries: 2,
+  tesDir:'./tests',
+  retries: 1,
   reporter: [['html', { open: 'never' }]],
   use: {
     headless: true,   // Run in headless mode

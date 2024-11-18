@@ -1,0 +1,16 @@
+{
+  "name": "playwright-api-tests",
+  "version": "1.0.0",
+  "description": "Automated API tests for Petstore using Playwright and Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "docker:build": "docker build -t playwright-api-tests .",
+    "docker:run": "docker run playwright-api-tests"
+  },
+  "author": "donghoang",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2"
+  }
+}
