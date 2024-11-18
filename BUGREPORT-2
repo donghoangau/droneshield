@@ -1,0 +1,21 @@
+Running test "peststor-orders.spec.js"
+Here is the list of bug found in from the Access to Petstore orders endpoints:
+
+
+Petstore Orders API Tests › Place a new order for a pet invalid data
+
+Petstore Orders API Tests › Place a new order for a pet, quantity 0
+
+Petstore Orders API Tests › Get order details for an invalid order input
+
+Petstore Orders API Tests › Delete order with invalid ID format
+
+Petstore Orders API Tests › Place an order with missing required fields
+
+Petstore Orders API Tests › Place an order with incorrect data types
+
+Petstore Orders API Tests › Place an order with a past ship date
+
+Petstore Orders API Tests › Get order details with invalid ID format
+
+Petstore Orders API Tests › Delete order with a negative ID
