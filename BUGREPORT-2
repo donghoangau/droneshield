@@ -19,3 +19,28 @@ Petstore Orders API Tests › Place an order with a past ship date
 Petstore Orders API Tests › Get order details with invalid ID format
 
 Petstore Orders API Tests › Delete order with a negative ID
+
+A sample of bug report for issue: Petstore Orders API Tests › Place a new order for a pet invalid data
+
+Description: 
+    The POST /store/order endpoint in the Petstore Orders API does not return the expected error response when provided with invalid or malformed data. 
+    Instead, it either accepts the data incorrectly or returns a generic error message, leading to potential issues with data integrity and API usability.
+
+Steps to Reproduce:
+    Use postman or run script to send an endpoint: POST https://petstore.swagger.io/v2/store/order
+    Request Body (example of invalid data):
+    {   
+        id: -2,
+        petId: 1.1,
+        quantity: -9,
+        shipDate: new Date().toISOString(),
+        status: 'placed',
+        complete: true,
+    }
+
+Expected Result:
+    The API should respond with a 400 Bad Request status code.
+    The response body should provide a detailed error message indicating which fields are invalid and why.
+
+Actual Result:
+    Request is successful and returns 200 status code.
